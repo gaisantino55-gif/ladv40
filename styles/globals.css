@@ -1,0 +1,48 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 50%, #f0fdf4 100%);
+  min-height: 100vh;
+  color: #0d1f14;
+}
+
+* {
+  box-sizing: border-box;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 150ms;
+  transition-timing-function: ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(5, 150, 105, 0.22);
+  color: #065f46;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #d1fae5; }
+::-webkit-scrollbar-thumb { background: #6ee7b7; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #059669; }
+
+/* Micro-animation utility */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.45s ease both; }
