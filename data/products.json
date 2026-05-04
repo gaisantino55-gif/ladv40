@@ -1,0 +1,248 @@
+[
+  {
+    "id": "epson-m2140",
+    "name": "Epson EcoTank M2140 A4 Duplex All-in-One Ink Tank Printer",
+    "price": 45000,
+    "category": "Printers",
+    "image": "/products/rksti2wpzz93idhosgew.webp",
+    "description": "3-in-1 Monochrome ink tank printer with automatic duplex printing, Ethernet connectivity, and high-capacity refillable tanks.",
+    "in_stock": true,
+    "details": "Model: Epson EcoTank M2140\nFunctions: Print, Scan, Copy\nDuplex: Automatic\nConnectivity: Ethernet, USB\nDisplay: Colour LCD touchscreen"
+  },
+  {
+    "id": "hp-deskjet-2875",
+    "name": "HP DeskJet 2875 All-in-One Printer",
+    "price": 9999,
+    "category": "Printers",
+    "image": "/products/prubtvw2yacq8743ciy0.webp",
+    "images": [
+      "/products/prubtvw2yacq8743ciy0.webp",
+      "/products/y0ydoefv0pq7rzmyxoja.webp"
+    ],
+    "description": "Compact and wireless All-in-One printer for printing, copying, and scanning. Features Wi-Fi connectivity and mobile printing via HP Smart App.",
+    "in_stock": true,
+    "details": "Functions: Print, Copy, Scan\nConnectivity: USB 2.0, Wi-Fi\nSpeed: 7.5 ppm (Black), 5.5 ppm (Color)"
+  },
+  {
+    "id": "hp-smart-tank-581",
+    "name": "HP Smart Tank 581 Wireless All-in-One Printer",
+    "price": 26000,
+    "category": "Printers",
+    "image": "/products/a6d7omqpsfkms7ywyfun.webp",
+    "description": "High-efficiency wireless ink tank printer with ultra-low-cost printing. Ideal for heavy home and office use with spill-free refills.",
+    "in_stock": true,
+    "details": "Functions: Print, Copy, Scan\nConnectivity: Wi-Fi, USB 2.0, Bluetooth LE\nSpeed: 12 ppm (Black), 5 ppm (Color)"
+  },
+  {
+    "id": "hp-laserjet-3103fdw",
+    "name": "HP LaserJet Pro MFP 3103fdw Mono All-in-One",
+    "price": 52500,
+    "category": "Printers",
+    "image": "/products/par9grgrwu9sowxkp0w9.webp",
+    "description": "Professional monochrome laser printer with automatic duplexing and ADF. Built for speed and reliability in small to medium offices.",
+    "in_stock": true,
+    "details": "Functions: Print, Copy, Scan, Fax\nSpeed: Up to 35 ppm\nConnectivity: Wireless, Ethernet, USB"
+  },
+  {
+    "id": "hp-color-laserjet-4303fdn",
+    "name": "HP Color LaserJet Pro MFP 4303fdn",
+    "price": 72000,
+    "category": "Printers",
+    "image": "/products/q2heffkmz0y8thdqj7qz.webp",
+    "images": [
+      "/products/q2heffkmz0y8thdqj7qz.webp",
+      "/products/hu3dbndmx7cuhhguob0n.webp"
+    ],
+    "description": "Fast and professional color laser all-in-one printer with automatic duplex and ADF. Network-ready for busy office environments.",
+    "in_stock": true,
+    "details": "Functions: Print, Copy, Scan, Fax\nSpeed: Up to 28 ppm (Color & Black)\nConnectivity: Ethernet, USB 2.0"
+  },
+  {
+    "id": "hp-victus-15-i7",
+    "name": "HP Victus Gaming 15 Laptop (Intel Core i7, 16GB RAM)",
+    "price": 165000,
+    "originalPrice": 183000,
+    "discount": 10,
+    "category": "Laptops",
+    "image": "/products/buixotfuifiadvd7v9au.webp",
+    "colors": [
+      {
+        "name": "Shadow Black",
+        "image": "/products/buixotfuifiadvd7v9au.webp"
+      },
+      {
+        "name": "Ceramic White",
+        "image": "/products/lsa631uopoafuspai3oh.webp"
+      },
+      {
+        "name": "Performance Blue",
+        "image": "/products/tt23mcebmfjqqbrhznop.webp"
+      }
+    ],
+    "description": "High-performance gaming laptop with Intel Core i7, 16GB RAM, and NVIDIA dedicated graphics. Features a 15.6\" FHD display and backlit keyboard.",
+    "in_stock": true,
+    "details": "CPU: Intel Core i7\nRAM: 16GB\nStorage: 512GB SSD\nDisplay: 15.6\" FHD"
+  },
+  {
+    "id": "hp-omnibook-ultra-flip",
+    "name": "HP OmniBook Ultra Flip 14\" Convertible Laptop",
+    "price": 170000,
+    "category": "Laptops",
+    "image": "/products/hsozturkime7mb2xaf4o.webp",
+    "images": [
+      "/products/hsozturkime7mb2xaf4o.webp",
+      "/products/fsqd8xvuio5sbxdkkinn.webp"
+    ],
+    "description": "Versatile 2-in-1 touchscreen laptop with Intel Core Ultra 7 processor and 1TB SSD. Features a 360° flip design for maximum flexibility.",
+    "in_stock": true,
+    "details": "CPU: Intel Core Ultra 7-256V\nRAM: 16GB\nStorage: 1TB SSD\nDesign: 360° Convertible"
+  },
+  {
+    "id": "hp-omnibook-x-flip",
+    "name": "HP OmniBook X Flip NGAI 14\" 2K Convertible",
+    "price": 117000,
+    "category": "Laptops",
+    "image": "/products/ilbh0yatbc0xp9rog5tj.webp",
+    "colors": [
+      {
+        "name": "Natural Silver",
+        "image": "/products/ilbh0yatbc0xp9rog5tj.webp"
+      },
+      {
+        "name": "Dark Ash",
+        "image": "/products/whym67hbnvxn9k1hdwpl.webp"
+      },
+      {
+        "name": "Cloud Blue",
+        "image": "/products/geof5vy9pvtem7ca1puu.webp"
+      }
+    ],
+    "description": "Premium 14\" 2K touchscreen convertible laptop with Intel Core i7 and Arc Graphics. Ideal for modern professionals and creators.",
+    "in_stock": true,
+    "details": "CPU: Intel Core Ultra i7-256V\nRAM: 16GB\nStorage: 1TB SSD\nDisplay: 14\" 2K Touch"
+  },
+  {
+    "id": "hp-series-5-monitor",
+    "name": "HP Series 5 524sh 23.8\" FHD Monitor",
+    "price": 21500,
+    "originalPrice": 23999,
+    "discount": 10,
+    "category": "Monitors",
+    "image": "/products/bv9csr1czzfv1uraxpfl.webp",
+    "colors": [
+      {
+        "name": "Polar White",
+        "image": "/products/bv9csr1czzfv1uraxpfl.webp"
+      },
+      {
+        "name": "Meteor Gray",
+        "image": "/products/rseuu7jka0pbyut2wbsj.webp"
+      },
+      {
+        "name": "Deep Sea",
+        "image": "/products/jauvam3j9nbqxwwa9tsk.webp"
+      },
+      {
+        "name": "Jet Black",
+        "image": "/products/bsrmlihuigurgokbiqlt.webp"
+      }
+    ],
+    "description": "Sleek 23.8\" Full HD IPS monitor with 75Hz refresh rate and vibrant color accuracy. Perfect for productivity and entertainment.",
+    "in_stock": true,
+    "details": "Size: 23.8\"\nResolution: FHD (1920x1080)\nRefresh Rate: 75Hz\nPanel: IPS"
+  },
+  {
+    "id": "samsung-odyssey-g6",
+    "name": "Samsung Odyssey G6 32\" QHD 240Hz Gaming Monitor",
+    "price": 71000,
+    "category": "Monitors",
+    "image": "/products/ybzntatkh8arkah0cwbo.webp",
+    "colors": [
+      {
+        "name": "Cyber Gray",
+        "image": "/products/ybzntatkh8arkah0cwbo.webp"
+      },
+      {
+        "name": "Midnight Blue",
+        "image": "/products/rmvwluossz6kvi9rpiog.webp"
+      },
+      {
+        "name": "Frost White",
+        "image": "/products/mviel73yarxop25q35ba.webp"
+      },
+      {
+        "name": "Titan Black",
+        "image": "/products/z7c570zf8edvuixe8brr.webp"
+      }
+    ],
+    "description": "High-performance curved gaming monitor with 240Hz refresh rate and 1ms response time. Features QHD resolution and HDR10 support.",
+    "in_stock": true,
+    "details": "Size: 32\"\nResolution: QHD (2560x1440)\nRefresh Rate: 240Hz\nCurvature: 1000R"
+  },
+  {
+    "id": "apc-smart-ups-1000",
+    "name": "APC Smart-UPS C 1000VA LCD Rackmount",
+    "price": 74000,
+    "category": "Power",
+    "image": "/products/oopricf8grsfmlrbtqua.webp",
+    "images": [
+      "/products/oopricf8grsfmlrbtqua.webp",
+      "/products/mgpzrg5txwonib2wuu6f.webp"
+    ],
+    "description": "Reliable 1000VA rackmount UPS with SmartConnect cloud monitoring. Provides pure sine wave output for sensitive electronics.",
+    "in_stock": true,
+    "details": "Capacity: 1000VA / 600W\nForm Factor: 2U Rackmount\nOutput: Sine Wave"
+  },
+  {
+    "id": "mecer-ups-2000",
+    "name": "MeCER UPS 2000 WPRU 1600W Online UPS",
+    "price": 80000,
+    "category": "Power",
+    "image": "/products/hjouo8uvgxhrwjcsj1jq.webp",
+    "description": "High-performance 2000VA online double-conversion UPS for mission-critical IT infrastructure. Ensures continuous pure sine wave power.",
+    "in_stock": true,
+    "details": "Capacity: 2000VA / 1600W\nType: Online / Double Conversion\nForm Factor: 2U Rackmount"
+  },
+  {
+    "id": "kaspersky-standard-5",
+    "name": "Kaspersky Standard 5 User License (1 Year)",
+    "price": 2600,
+    "category": "Software",
+    "image": "/products/mr8og3yly7xa1jp5qofl.webp",
+    "description": "Real-time antivirus and online security for up to 5 devices. Protects against malware, ransomware, and phishing attacks.",
+    "in_stock": true,
+    "details": "Users: 5 Devices\nDuration: 1 Year\nCompatibility: Windows, Mac, Android, iOS"
+  },
+  {
+    "id": "epson-103-ink-set",
+    "name": "Epson 103 Ink Bottle Set (CMYK)",
+    "price": 1500,
+    "category": "Accessories",
+    "image": "/products/btahs6xjduhf2bhbfotf.webp",
+    "description": "Genuine high-yield Epson 103 ink bottles for EcoTank printers. Includes Black, Cyan, Magenta, and Yellow.",
+    "in_stock": true,
+    "details": "Set: 4 Colors\nType: Dye/Pigment Mixed\nCompatibility: EcoTank L-Series"
+  },
+  {
+    "id": "epson-101-ink-black",
+    "name": "Epson 101 Black Ink Bottle",
+    "price": 2500,
+    "category": "Accessories",
+    "image": "/products/q44r7tmvwovdgt7aicq3.webp",
+    "description": "Genuine high-yield Epson 101 pigment black ink for sharp, smudge-resistant text. Ideal for professional document printing.",
+    "in_stock": true,
+    "details": "Color: Black\nType: Pigment\nYield: High-yield"
+  },
+  {
+    "id": "msi-rtx-5080",
+    "name": "MSI GeForce RTX 5080 Gaming Trio 16GB GDDR7",
+    "price": 175000,
+    "originalPrice": 185000,
+    "discount": 5,
+    "category": "Hardware",
+    "image": "/products/vhsinf6q32brpp9m7gni.webp",
+    "description": "Next-gen NVIDIA RTX 5080 GPU with 16GB GDDR7 VRAM. Features MSI Gaming Trio triple-fan cooling for peak performance.",
+    "in_stock": true,
+    "details": "GPU: RTX 5080\nVRAM: 16GB GDDR7\nCooling: Tri Frozr (Triple Fan)"
+  }
+]
