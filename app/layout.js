@@ -3,7 +3,6 @@ import { ClerkProvider } from '@clerk/nextjs';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import MobileBottomNav from '../components/MobileBottomNav';
-import AppwritePing from '../components/AppwritePing';
 import UserSync from '../components/UserSync';
 import { CartProvider } from '../context/CartContext';
 import '../styles/globals.css';
@@ -65,7 +64,6 @@ export default function RootLayout({ children }) {
           <CartProvider>
             <UserSync />
             <Navbar />
-            <AppwritePing />
             <div className="pb-[72px] md:pb-0 flex flex-col min-h-[calc(100vh-80px)]">
               {children}
               <Footer />
