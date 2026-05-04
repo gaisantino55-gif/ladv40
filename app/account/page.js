@@ -56,7 +56,8 @@ export default function AccountPage() {
         }
         setLoading(false);
       }, (error) => {
-        const isPermissionDenied = error?.code === 'permission_denied';
+        const errorCode = String(error?.code || '').toLowerCase();
+        const isPermissionDenied = errorCode.includes('permission');
         if (isPermissionDenied) {
           console.warn('[Account] Firebase permission denied:', error.message || error);
         } else {
@@ -106,7 +107,8 @@ export default function AccountPage() {
       });
       setMessage({ type: 'success', text: 'Account details updated successfully!' });
     } catch (error) {
-      const isPermissionDenied = error?.code === 'permission_denied';
+      const errorCode = String(error?.code || '').toLowerCase();
+      const isPermissionDenied = errorCode.includes('permission');
       if (isPermissionDenied) {
         console.warn('Error updating profile due to Firebase permission denied:', error.message || error);
       } else {
@@ -285,7 +287,13 @@ export default function AccountPage() {
                           try {
                             await update(ref(db, `users/${user.id}`), { notifications: val });
                           } catch (error) {
-                            console.error('[Account] Failed to save notification preference:', error);
+                            const errorCode = String(error?.code || '').toLowerCase();
+                            const isPermissionDenied = errorCode.includes('permission');
+                            if (isPermissionDenied) {
+                              console.warn('[Account] Notification update skipped due to Firebase permission denied:', error.message || error);
+                            } else {
+                              console.error('[Account] Failed to save notification preference:', error);
+                            }
                             setFirebaseError('Unable to update notification preferences. Permission may be denied.');
                           }
                         }}

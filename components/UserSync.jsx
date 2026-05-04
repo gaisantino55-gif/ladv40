@@ -33,7 +33,13 @@ export default function UserSync() {
           console.log('[Firebase] User details synchronized:', user.id);
         })
         .catch((error) => {
-          console.error('[Firebase] User sync failed:', error);
+          const errorCode = String(error?.code || '').toLowerCase();
+          const isPermissionDenied = errorCode.includes('permission');
+          if (isPermissionDenied) {
+            console.warn('[Firebase] User sync skipped due to permission denied:', error.message || error);
+          } else {
+            console.error('[Firebase] User sync failed:', error);
+          }
         });
     } else if (isLoaded && isSignedIn && user) {
       console.warn('[Firebase] UserSync skipped because Firebase is not available or not configured.');

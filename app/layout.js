@@ -1,3 +1,6 @@
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script';
 import { ClerkProvider } from '@clerk/nextjs';
 import Navbar from '../components/Navbar';
@@ -6,6 +9,8 @@ import MobileBottomNav from '../components/MobileBottomNav';
 import UserSync from '../components/UserSync';
 import { CartProvider } from '../context/CartContext';
 import '../styles/globals.css';
+
+config.autoAddCss = false;
 
 export const metadata = {
   title: 'GAAB Solutions | Electronics Store',
@@ -69,6 +74,7 @@ export default function RootLayout({ children }) {
               <Footer />
             </div>
             <MobileBottomNav />
+            <SpeedInsights />
           </CartProvider>
         </ClerkProvider>
       </body>

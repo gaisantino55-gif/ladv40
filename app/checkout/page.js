@@ -62,8 +62,15 @@ export default function CheckoutPage() {
       setStatusType('success');
       event.currentTarget.reset();
     } catch (error) {
-      console.error('[Checkout] Error saving order:', error);
-      setStatus('❌ ' + (error.message || 'Something went wrong. Please try again.'));
+      const errorCode = String(error?.code || '').toLowerCase();
+      const isPermissionDenied = errorCode.includes('permission');
+      if (isPermissionDenied) {
+        console.warn('[Checkout] Firebase permission denied while saving order:', error.message || error);
+        setStatus('❌ Unable to save order because Firebase permissions are denied. Please contact support.');
+      } else {
+        console.error('[Checkout] Error saving order:', error);
+        setStatus('❌ ' + (error.message || 'Something went wrong. Please try again.'));
+      }
       setStatusType('error');
     } finally {
       setIsSubmitting(false);
