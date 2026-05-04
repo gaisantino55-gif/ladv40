@@ -3,7 +3,7 @@
 import { useUser, RedirectToSignIn } from '@clerk/nextjs';
 import { useState, useEffect } from 'react';
 import { ref, onValue, update } from 'firebase/database';
-import { db } from '../../config/firebase';
+import { db, hasFirebaseConfig } from '../../config/firebase';
 
 export default function AccountPage() {
   const { user, isLoaded, isSignedIn } = useUser();
@@ -11,6 +11,7 @@ export default function AccountPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
+  const [firebaseError, setFirebaseError] = useState('');
 
   // Form State
   const [formData, setFormData] = useState({
@@ -24,6 +25,16 @@ export default function AccountPage() {
     console.log('[Account] isLoaded:', isLoaded, 'isSignedIn:', isSignedIn);
     
     if (isLoaded && isSignedIn && user) {
+      if (!db || !hasFirebaseConfig) {
+        console.warn('[Account] Firebase not configured, skipping Realtime Database read.');
+        setFormData((prev) => ({
+          ...prev,
+          fullName: user.fullName || ''
+        }));
+        setLoading(false);
+        return;
+      }
+
       console.log('[Account] Fetching data for user:', user.id);
       const userRef = ref(db, `users/${user.id}`);
       
@@ -45,7 +56,13 @@ export default function AccountPage() {
         }
         setLoading(false);
       }, (error) => {
-        console.error('[Account] Firebase Error:', error);
+        const isPermissionDenied = error?.code === 'permission_denied';
+        if (isPermissionDenied) {
+          console.warn('[Account] Firebase permission denied:', error.message || error);
+        } else {
+          console.error('[Account] Firebase Error:', error);
+        }
+        setFirebaseError('Unable to load your profile from Firebase. Permission may be denied.');
         setLoading(false); // Clear loading even on error
       });
 
@@ -72,6 +89,15 @@ export default function AccountPage() {
     setSaving(true);
     setMessage({ type: '', text: '' });
 
+    if (!db || !hasFirebaseConfig) {
+      setMessage({
+        type: 'error',
+        text: 'Firebase is not available. Profile changes cannot be saved right now.'
+      });
+      setSaving(false);
+      return;
+    }
+
     try {
       const userRef = ref(db, `users/${user.id}`);
       await update(userRef, {
@@ -80,8 +106,14 @@ export default function AccountPage() {
       });
       setMessage({ type: 'success', text: 'Account details updated successfully!' });
     } catch (error) {
-      console.error('Error updating profile:', error);
-      setMessage({ type: 'error', text: 'Failed to update details. Please try again.' });
+      const isPermissionDenied = error?.code === 'permission_denied';
+      if (isPermissionDenied) {
+        console.warn('Error updating profile due to Firebase permission denied:', error.message || error);
+      } else {
+        console.error('Error updating profile:', error);
+      }
+      setFirebaseError('Unable to save changes to Firebase. Permission may be denied.');
+      setMessage({ type: 'error', text: 'Failed to update details. Please try again later.' });
     } finally {
       setSaving(false);
     }
@@ -194,6 +226,12 @@ export default function AccountPage() {
                     </div>
                   )}
 
+                  {firebaseError && (
+                    <div className="p-4 rounded-xl text-sm font-bold bg-yellow-50 text-yellow-800">
+                      {firebaseError}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
                     disabled={saving}
@@ -235,11 +273,21 @@ export default function AccountPage() {
                       <input 
                         type="checkbox" 
                         checked={formData.notifications}
-                        onChange={(e) => {
+                        onChange={async (e) => {
                           const val = e.target.checked;
                           setFormData({ ...formData, notifications: val });
-                          // Auto save this one
-                          update(ref(db, `users/${user.id}`), { notifications: val });
+
+                          if (!db || !hasFirebaseConfig) {
+                            console.warn('[Account] Firebase not configured, skipping notification update.');
+                            return;
+                          }
+
+                          try {
+                            await update(ref(db, `users/${user.id}`), { notifications: val });
+                          } catch (error) {
+                            console.error('[Account] Failed to save notification preference:', error);
+                            setFirebaseError('Unable to update notification preferences. Permission may be denied.');
+                          }
                         }}
                         className="sr-only peer" 
                       />

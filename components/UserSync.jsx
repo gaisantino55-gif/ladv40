@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { useUser } from '@clerk/nextjs';
 import { ref, update, serverTimestamp } from 'firebase/database';
-import { db } from '../config/firebase';
+import { db, hasFirebaseConfig } from '../config/firebase';
 
 /**
  * UserSync component — synchronizes Clerk user data with Firebase Realtime Database.
@@ -13,7 +13,7 @@ export default function UserSync() {
   const { user, isLoaded, isSignedIn } = useUser();
 
   useEffect(() => {
-    if (isLoaded && isSignedIn && user) {
+    if (isLoaded && isSignedIn && user && db && hasFirebaseConfig) {
       const userRef = ref(db, `users/${user.id}`);
       
       const userData = {
@@ -35,6 +35,8 @@ export default function UserSync() {
         .catch((error) => {
           console.error('[Firebase] User sync failed:', error);
         });
+    } else if (isLoaded && isSignedIn && user) {
+      console.warn('[Firebase] UserSync skipped because Firebase is not available or not configured.');
     }
   }, [isLoaded, isSignedIn, user]);
 

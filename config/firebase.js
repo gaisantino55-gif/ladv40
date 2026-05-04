@@ -14,18 +14,33 @@ const firebaseConfig = {
   measurementId:     process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 };
 
-// Initialize Firebase (SSR friendly pattern)
-const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
-const db = getDatabase(app);
+const hasFirebaseConfig = Boolean(
+  firebaseConfig.apiKey &&
+  firebaseConfig.authDomain &&
+  firebaseConfig.databaseURL &&
+  firebaseConfig.projectId &&
+  firebaseConfig.appId
+);
 
-// Analytics initialization (client-side only)
+let app = null;
+let db = null;
 let analytics = null;
-if (typeof window !== "undefined") {
-  isSupported().then((supported) => {
-    if (supported) {
-      analytics = getAnalytics(app);
-    }
-  });
+
+if (hasFirebaseConfig) {
+  app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
+  db = getDatabase(app);
+
+  if (typeof window !== "undefined") {
+    isSupported().then((supported) => {
+      if (supported) {
+        analytics = getAnalytics(app);
+      }
+    }).catch(() => {
+      // ignore analytics failures on unsupported browsers
+    });
+  }
+} else {
+  console.warn('[Firebase] Skipping initialization because required Firebase environment variables are missing.');
 }
 
-export { app, db, analytics };
+export { app, db, analytics, hasFirebaseConfig };
