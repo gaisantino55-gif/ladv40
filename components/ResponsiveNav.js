@@ -61,7 +61,7 @@ export default function ResponsiveNav() {
         </div>
       </div>
 
-      <div className={`md:hidden ${open ? 'block' : 'hidden'} bg-white border-t border-gray-200 shadow-sm`}> 
+      <div className={`md:hidden ${open ? 'block' : 'hidden'} bg-white border-t border-gray-200 shadow-sm`}>
         <div className="px-6 py-5 space-y-4">
           <a className="block text-slate-700 font-medium" href="#">
             Home
