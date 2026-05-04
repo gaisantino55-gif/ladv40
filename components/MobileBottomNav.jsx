@@ -10,7 +10,7 @@ export default function MobileBottomNav() {
 
   const navItems = [
     { label: 'Home', icon: 'home', href: '/' },
-    { label: 'Categories', icon: 'grid_view', href: '/products' },
+    { label: 'Products', icon: 'grid_view', href: '/products' },
     { label: 'Cart', icon: 'shopping_basket', href: '/cart', badge: cartCount },
     { label: 'Account', icon: 'person', href: '/account' },
   ];

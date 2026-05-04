@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import AuthHeader from './AuthHeader';
 
 export default function ResponsiveNav() {
@@ -22,21 +23,21 @@ export default function ResponsiveNav() {
         </div>
 
         <div className="hidden md:flex items-center space-x-8">
-          <a className="text-emerald-700 border-b-2 border-emerald-700 pb-1 font-semibold font-label-lg transition-all" href="#">
+          <Link className="text-emerald-700 border-b-2 border-emerald-700 pb-1 font-semibold font-label-lg transition-all" href="/">
             Home
-          </a>
-          <a className="text-slate-600 font-medium font-label-lg hover:text-emerald-700-dark transition-colors duration-200" href="#">
+          </Link>
+          <Link className="text-slate-600 font-medium font-label-lg hover:text-emerald-700-dark transition-colors duration-200" href="/products">
             Products
-          </a>
-          <a className="text-slate-600 font-medium font-label-lg hover:text-emerald-700-dark transition-colors duration-200" href="#">
-            IT Services
-          </a>
-          <a className="text-slate-600 font-medium font-label-lg hover:text-emerald-700-dark transition-colors duration-200" href="#">
-            About
-          </a>
-          <a className="text-slate-600 font-medium font-label-lg hover:text-emerald-700-dark transition-colors duration-200" href="#">
+          </Link>
+          <Link className="text-slate-600 font-medium font-label-lg hover:text-emerald-700-dark transition-colors duration-200" href="/delivery">
+            Delivery
+          </Link>
+          <Link className="text-slate-600 font-medium font-label-lg hover:text-emerald-700-dark transition-colors duration-200" href="/contact">
             Contact
-          </a>
+          </Link>
+          <Link className="text-slate-600 font-medium font-label-lg hover:text-emerald-700-dark transition-colors duration-200" href="/account">
+            Account
+          </Link>
         </div>
 
         <div className="hidden lg:flex items-center space-x-6">
@@ -63,21 +64,21 @@ export default function ResponsiveNav() {
 
       <div className={`md:hidden ${open ? 'block' : 'hidden'} bg-white border-t border-gray-200 shadow-sm`}>
         <div className="px-6 py-5 space-y-4">
-          <a className="block text-slate-700 font-medium" href="#">
+          <Link className="block text-slate-700 font-medium" href="/">
             Home
-          </a>
-          <a className="block text-slate-700 font-medium" href="#">
+          </Link>
+          <Link className="block text-slate-700 font-medium" href="/products">
             Products
-          </a>
-          <a className="block text-slate-700 font-medium" href="#">
-            IT Services
-          </a>
-          <a className="block text-slate-700 font-medium" href="#">
-            About
-          </a>
-          <a className="block text-slate-700 font-medium" href="#">
+          </Link>
+          <Link className="block text-slate-700 font-medium" href="/delivery">
+            Delivery
+          </Link>
+          <Link className="block text-slate-700 font-medium" href="/contact">
             Contact
-          </a>
+          </Link>
+          <Link className="block text-slate-700 font-medium" href="/account">
+            Account
+          </Link>
           <div className="relative">
             <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">search</span>
             <input

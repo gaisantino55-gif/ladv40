@@ -28,10 +28,24 @@ export default function Navbar() {
         <div className="flex-1 max-w-md hidden md:flex items-center gap-4">
           <nav className="flex items-center gap-6 text-sm font-semibold mr-4">
             <Link
+              href="/"
+              className="text-emerald-700 hover:text-emerald-500 transition-colors relative group whitespace-nowrap"
+            >
+              Home
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-emerald-500 rounded-full transition-all group-hover:w-full" />
+            </Link>
+            <Link
               href="/products"
               className="text-emerald-700 hover:text-emerald-500 transition-colors relative group whitespace-nowrap"
             >
               Products
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-emerald-500 rounded-full transition-all group-hover:w-full" />
+            </Link>
+            <Link
+              href="/contact"
+              className="text-emerald-700 hover:text-emerald-500 transition-colors relative group whitespace-nowrap"
+            >
+              Contact
               <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-emerald-500 rounded-full transition-all group-hover:w-full" />
             </Link>
             <Link
